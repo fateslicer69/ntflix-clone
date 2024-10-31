@@ -1,0 +1,110 @@
+.title-cards {
+   
+    margin-top: 40px; /* Space above title cards */
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* White text */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent wrapping of items */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.title-cards h2 {
+    font-size: 1.8em; /* Heading size */
+    margin-bottom: 15px; /* Space below heading */
+    font-weight: bold; /* Bold heading */
+    left: 0; /* Align left */
+}
+
+.card-list {
+    display: flex; /* Flexbox for horizontal layout */
+    gap: 12px; /* Space between cards */
+    padding-bottom: 10px; /* Space below cards */
+    padding-left: 2%; /* Space to the left */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap behavior */
+}
+.card-list .card p{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.card-list::-webkit-scrollbar {
+    display: none; /* Hide default scrollbar */
+}
+
+.card {
+    flex: 0 0 auto; /* Prevent cards from shrinking */
+    width: 240px; /* Fixed width for cards */
+    border-radius: 4px; /* Rounded corners */
+    position: relative; /* For absolute positioning of text */
+    overflow: hidden; /* Hide overflow */
+    scroll-snap-align: start; /* Snap alignment */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+.card img {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    object-fit: cover; /* Cover the entire card */
+    border-radius: 4px; /* Rounded corners for images */
+}
+
+.card p {
+    position: absolute; /* Position text within card */
+    bottom: 0px; /* Position from bottom */
+    left: 2px; /* Position from left */
+    font-size: 1em; /* Font size for text */
+    font-weight: bold; /* Bold text */
+    color: white; /* White text color */
+   
+    padding: 2px 2px; /* Padding around text */
+    border-radius: 2px; /* Rounded corners for text background */
+    max-width: 80%; /* Limit width of text */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add "..." for long text */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.card-list::-webkit-scrollbar {
+    height: 8px; /* Height of scrollbar */
+}
+
+.card-list::-webkit-scrollbar-thumb {
+    background-color: #555; /* Dark scrollbar thumb */
+    border-radius: 4px; /* Rounded scrollbar thumb */
+}
+
+@media(max-width:800px){
+    .title-cards{
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .title-cards h2{
+        font-size: 20px;
+    } 
+    .card-list img{
+        width: 200px;
+    }
+    .card-list p{
+        font-size: 12px;
+    }
+}
+
+@media(max-width:500px){
+    .title-cards h2{
+        font-size: 15px;
+    } 
+    .card-list img{
+        width: 165px;
+    }
+    .card-list p{
+        font-size: 10px;
+    }
+}
